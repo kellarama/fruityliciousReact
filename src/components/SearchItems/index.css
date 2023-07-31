@@ -1,0 +1,47 @@
+* {
+  font-family: 'roboto';
+  box-sizing: border-box;
+}
+.search-items {
+  width: 300px;
+  margin: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #d4d3d2;
+  box-shadow: 3px 3px 8px;
+}
+.title {
+  color: #000000;
+  font-size: 25px;
+  padding: 10px;
+  font-weight: bold;
+}
+.img-size {
+  width: 100%;
+  border-radius: 10px;
+}
+.price {
+  color: #000000;
+  font-size: 20px;
+  font-weight: 800;
+}
+.style {
+  color: #1f5c01;
+  font-size: 20px;
+  font-weight: 800;
+}
+.description {
+  color: #000000;
+  font-size: 23px;
+  font-weight: 800;
+}
+.description-style {
+  font-size: 18px;
+  color: #09033b;
+  font-weight: 500;
+}
+.quantity {
+  color: #000000;
+  font-size: 23px;
+  font-weight: 800;
+}

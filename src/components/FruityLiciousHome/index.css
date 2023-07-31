@@ -1,0 +1,39 @@
+* {
+  font-family: 'roboto';
+  box-sizing: border-box;
+}
+.company-image {
+  width: 50%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.search {
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  width: 40%;
+  box-shadow: 3px 3px 8px #000000;
+}
+.search-text {
+  color: #000000;
+  font-size: 20px;
+}
+.result-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.suggestion-btn {
+  color: #000000;
+  font-size: 18px;
+  background-color: transparent;
+  border: 2px solid #0a5702;
+  border-radius: 10px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .search-text {
+    font-size: 30px;
+  }
+}

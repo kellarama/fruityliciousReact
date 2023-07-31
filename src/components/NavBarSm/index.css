@@ -1,0 +1,48 @@
+.company-name {
+  color: #ffffff;
+  font-family: 'lobster';
+  text-shadow: 2px 2px 5px #000000;
+  font-size: 20px;
+}
+.link-style {
+  color: #ffffff;
+  font-size: 16px;
+  text-decoration: none;
+  padding-bottom: 10px;
+}
+.link-style:hover {
+  color: #ffffff;
+  text-decoration-color: #f7ca02;
+}
+.dropdown-box {
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 10px;
+  margin-right: 15px;
+}
+.option {
+  color: black;
+  font-size: 15px;
+}
+.scroll-bar-btn {
+  background-color: transparent;
+  height: 32px;
+  width: 35px;
+  border: none;
+  color: #ffffff;
+}
+.bar {
+  color: #ffffff;
+}
+.search-bar {
+  width: 50%;
+  height: 35px;
+  background-color: transparent;
+  color: #ffffff;
+  opacity: 0.7;
+  border-radius: 10px;
+  border: 1px solid #fad905;
+  padding: 10px;
+}

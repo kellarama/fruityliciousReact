@@ -8,15 +8,22 @@ import SearchItems from '../SearchItems'
 
 import InitialItemsList from '../InitialItemsList'
 
+import LoginAndRegistration from '../LoginAndRegistration'
+
 import './index.css'
+
+// using class Component to return jsx element
 
 class FruityLiciousHome extends Component {
   state = {
     isSearchBtnClicked: false,
     isProfileBtnClicked: false,
+    isLoginBtnClicked: false,
     searchInput: '',
     count: 0,
   }
+
+  // using onSearchClick function to modify the isSearchBtnClicked
 
   onSearchClick = () => {
     this.setState(prevState => ({
@@ -24,27 +31,55 @@ class FruityLiciousHome extends Component {
     }))
   }
 
+  // login and register update value when clicked
+
+  onLoginAndRegistrationClick = () => {
+    this.setState(prevState => ({
+      isLoginBtnClicked: !prevState.isLoginBtnClicked,
+    }))
+  }
+
+  // using btnClick function to back from the search container
+
   btnClick = () => {
     this.setState(prevState => ({
       isSearchBtnClicked: !prevState.isSearchBtnClicked,
     }))
   }
 
+  loginClick = () => {
+    this.setState(prevState => ({
+      isLoginBtnClicked: !prevState.isLoginBtnClicked,
+    }))
+  }
+
+  // creating home section using createHomeSection function
+
   createHomeSection = () => (
     <div>
       <div className="nav-bar d-block d-lg-none">
-        <NavBarSm onSearchClick={this.onSearchClick} />
+        <NavBarSm
+          onSearchClick={this.onSearchClick}
+          onLoginAndRegistrationClick={this.onLoginAndRegistrationClick}
+        />
       </div>
       <div className="nav-bar d-none d-lg-block">
-        <NavBarLg onSearchClick={this.onSearchClick} />
+        <NavBarLg
+          onSearchClick={this.onSearchClick}
+          onLoginAndRegistrationClick={this.onLoginAndRegistrationClick}
+        />
       </div>
     </div>
   )
+
+  // searchInput function is used to modify the searchInput and count value
 
   searchInput = event => {
     this.setState({searchInput: event.target.value})
     this.setState({count: event.target.value.length})
   }
+
+  // searchContainer function is used to display search items
 
   searchContainer = (searchResults, count) => (
     <div className="container text-center mt-3">
@@ -95,11 +130,25 @@ class FruityLiciousHome extends Component {
     </div>
   )
 
-  profileContainer = () => (
+  // used for profile container
+
+  loginContainer = () => (
     <div>
-      <p>profile</p>
+      <div>
+        <LoginAndRegistration loginClick={this.loginClick} />
+      </div>
     </div>
   )
+
+  // used for sign in or login
+
+  profileContainer = () => (
+    <div>
+      <p>login</p>
+    </div>
+  )
+
+  // simply return null if false value
 
   returnNullFun = () => null
 
@@ -107,6 +156,7 @@ class FruityLiciousHome extends Component {
     const {
       isSearchBtnClicked,
       isProfileBtnClicked,
+      isLoginBtnClicked,
       count,
       searchInput,
     } = this.state
@@ -114,7 +164,7 @@ class FruityLiciousHome extends Component {
     const searchResults = InitialItemsList.filter(eachItem =>
       eachItem.name.toUpperCase().includes(searchInput.toUpperCase()),
     )
-    console.log(isSearchBtnClicked)
+    console.log(isLoginBtnClicked)
     console.log(count)
     let jsxEleCreateFun
     let checkState
@@ -126,6 +176,10 @@ class FruityLiciousHome extends Component {
       case isProfileBtnClicked:
         jsxEleCreateFun = this.profileContainer()
         checkState = isProfileBtnClicked
+        break
+      case isLoginBtnClicked:
+        jsxEleCreateFun = this.loginContainer()
+        checkState = isLoginBtnClicked
         break
       default:
         checkState = false
